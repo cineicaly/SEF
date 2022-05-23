@@ -21,6 +21,8 @@ public class MakeAppointmentController implements Initializable {
 
     @FXML
     private TextField tf_getpn;
+    @FXML
+    private TextField tf_getun;
 
     @FXML
     private Button bt_make_app;
@@ -42,7 +44,7 @@ public class MakeAppointmentController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if(!tf_getpn.getText().trim().isEmpty() && !my_date.getValue().toString().trim().isEmpty()){
-                DBUtils.addAppointment(event,tf_getpn.getText(),"Appointment made",my_date.getValue().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy")));
+                DBUtils.addAppointment(event,tf_getpn.getText(),"Appointment made","Date:"+my_date.getValue().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"))+",Inspector: "+tf_getun.getText()+"!");
             }else {
                     System.out.println("Please fill in all information");
                     Alert alert= new Alert(Alert.AlertType.ERROR);
