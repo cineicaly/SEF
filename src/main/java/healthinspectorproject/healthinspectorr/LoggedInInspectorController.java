@@ -49,15 +49,9 @@ public class LoggedInInspectorController implements Initializable {
 
 
     public void set_user_information (String username, String role){
-        label_welcome.setText("This is the main page!");
+        label_welcome.setText("This is the main page,"+username+"!");
         label_role.setText("Log out when you finish your work!");
-    }
-    /*
-    public void bt_companiesButtonOnAction(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("propertyfinder.fxml"));
 
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root, 800,400));
-        stage.show();
-    }*/
+    }
+
 }
